@@ -54,6 +54,6 @@
           (let [!pred (complement pred)
                 skip (take-while !pred s)
                 others (drop-while !pred s)
-                [xs ys] (split-with pred others)]
+                ys (second (split-with pred others))]
             (cons (concat skip)
                   (split-by pred ys))))))))

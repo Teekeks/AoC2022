@@ -8,8 +8,8 @@
                  [prismatic/plumbing "0.6.0"]
                  [org.clojure/tools.cli "1.0.206"]
                  [clj-http "3.12.3"]]
-  :main ^:skip-aot de.teawork.aoc2022
-  :target-path "target/%s"
+  :main ^:skip-aot de.teawork.aoc2022.core
+  :target-path "target/%s/"
   :resource-paths ["resources"]
   :profiles {:uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
