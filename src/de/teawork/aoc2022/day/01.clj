@@ -7,10 +7,10 @@
 
 (defn execute
   [config]
-  (let [data (->> (get-day-data "01" config)
-                  split-lines
-                  (f/fmap str->int))
-        elves (->> (split-by nil? data)
+  (let [elves (->> (get-day-data "01" config)
+                   split-lines
+                   (f/fmap str->int)
+                   (split-by nil?)
                    (f/fmap #(reduce + %))
                    sort)]
       (println (str "P1: " (last elves)))
