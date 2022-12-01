@@ -3,7 +3,6 @@
   :url "https://github.com/Teekeks/AoC2022"
   :license {:name "MIT"}
   :dependencies [[org.clojure/clojure "1.11.1"]
-                 [proto-repl "0.3.1"]
                  [uncomplicate/fluokitten "0.9.1"]
                  [prismatic/plumbing "0.6.0"]
                  [org.clojure/tools.cli "1.0.206"]
