@@ -13,3 +13,6 @@ pom.xml.asc
 .hg/
 /resources/*.txt
 config.edn
+/.calva
+/.clj-kondo/.cache
+/.lsp
