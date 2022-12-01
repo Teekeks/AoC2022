@@ -27,7 +27,8 @@
 
 (defn pull-and-store-data
   [day config file-name]
-  (let [headers {:cookie (str "session=" (:session-cookie config))}
+  (let [headers {:cookie (str "session=" (:session-cookie config))
+                 :user-agent (str (:repo config) " by " (:mail-adress config))}
         url (str "https://adventofcode.com/2022/day/" (str->int day) "/input")
         data (->> (http/get url {:headers headers :body "string"})
                   :body)]

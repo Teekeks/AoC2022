@@ -19,8 +19,7 @@
          config (get-config)]
     (cond
       (:help options)
-      (do
-        (println summary))
+      (println summary)
 
       (seq errors)
       (do
