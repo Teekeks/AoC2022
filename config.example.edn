@@ -1,2 +1,3 @@
-{
- :session-cookie ""}
+{:session-cookie ""
+ :mail-adress ""
+ :repo "github.com/Teekeks/AoC2022"}
