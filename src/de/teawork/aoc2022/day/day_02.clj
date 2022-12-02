@@ -1,4 +1,4 @@
-(ns de.teawork.aoc2022.day.02
+(ns de.teawork.aoc2022.day.day-02
   (:require
     [de.teawork.aoc2022.util :refer :all]
     [clojure.string :refer [split-lines split]]
