@@ -13,10 +13,9 @@
 
 (defn -main
   [& args]
-  (letk [[arguments
-          errors
+  (letk [[errors
           options
-          summary :as opts] (parse-opts args cli-options)
+          summary] (parse-opts args cli-options)
          config (get-config)]
         (cond
           (:help options)
@@ -28,7 +27,7 @@
             (println summary))
 
           :else
-          (condp = (:day options)
-            "01" (d01/execute config)
-            "02" (d02/execute config)
-            (println summary)))))
+          (time (condp = (:day options)
+                  "01" (d01/execute config)
+                  "02" (d02/execute config)
+                  (println summary))))))

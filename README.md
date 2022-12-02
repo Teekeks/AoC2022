@@ -17,3 +17,11 @@ The aim of this repository is to further my knowledge of clojure and therefore t
 You can execute a specific day using the `-d` parameter.
 Example:
 ```java -jar de.teawork.aoc2022-1.0.0.jar -d 01```
+
+
+## Times
+
+I try to make these run fast enough. Here are the times on my machine:
+
+- `01`: 19ms
+- `02`: 20ms
