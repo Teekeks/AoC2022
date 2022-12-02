@@ -23,5 +23,5 @@ Example:
 
 I try to make these run fast enough. Here are the times on my machine:
 
-- `01`: 19ms
-- `02`: 20ms
+- `01`: 15ms
+- `02`: 16ms
