@@ -3,11 +3,12 @@
    [clojure.tools.cli :refer [parse-opts]]
    [plumbing.core :refer :all]
    [de.teawork.aoc2022.util :refer :all]
-   [de.teawork.aoc2022.day.01 :as d01])
+   [de.teawork.aoc2022.day.01 :as d01]
+   [de.teawork.aoc2022.day.02 :as d02])
   (:gen-class))
 
 (def cli-options
-  [["-d" "--day ID" "Day"]
+  [["-d" "--day DAY" "Day to compute"]
    ["-h" "--help"]])
 
 (defn -main
@@ -29,4 +30,5 @@
           :else
           (condp = (:day options)
             "01" (d01/execute config)
+            "02" (d02/execute config)
             (println summary)))))
