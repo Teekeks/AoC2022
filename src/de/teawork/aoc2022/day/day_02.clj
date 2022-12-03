@@ -52,7 +52,7 @@
                   split-lines
                   (f/fmap #(split % #" ")))
         score-p1 (->> (f/fmap #(play-game-p1 (first %) (second %)) data)
-                   (reduce +))
+                      (reduce +))
         score-p2 (->> (f/fmap #(play-game-p2 (first %) (second %)) data)
                       (reduce +))]
     (println "P1: " score-p1)
