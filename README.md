@@ -25,3 +25,4 @@ I try to make these run fast enough. Here are the times on my machine:
 
 - `01`: 15ms
 - `02`: 16ms
+- `03`: 28ms
