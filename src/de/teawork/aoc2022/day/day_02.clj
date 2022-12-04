@@ -47,8 +47,8 @@
     
 
 (defn execute
-  [config]
-  (let [data (->> (get-day-data "02" config)
+  [input-data]
+  (let [data (->> input-data
                   split-lines
                   (f/fmap #(split % #" ")))
         score-p1 (->> (f/fmap #(play-game-p1 (first %) (second %)) data)

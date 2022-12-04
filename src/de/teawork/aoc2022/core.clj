@@ -6,7 +6,8 @@
    [de.teawork.aoc2022.day
     [day-01 :as d01]
     [day-02 :as d02]
-    [day-03 :as d03]])
+    [day-03 :as d03]
+    [day-04 :as d04]])
   (:gen-class))
 
 (def cli-options
@@ -29,8 +30,10 @@
             (println summary))
 
           :else
-          (time (condp = (:day options)
-                  "01" (d01/execute config)
-                  "02" (d02/execute config)
-                  "03" (d03/execute config)
-                  (println summary))))))
+          (let [input-data (get-day-data (:day options) config)]
+            (time (condp = (:day options)
+                    "01" (d01/execute input-data)
+                    "02" (d02/execute input-data)
+                    "03" (d03/execute input-data)
+                    "04" (d04/execute input-data)
+                    (println summary)))))))

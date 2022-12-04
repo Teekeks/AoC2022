@@ -6,8 +6,8 @@
   (:gen-class))
 
 (defn execute
-  [config]
-  (let [elves (->> (get-day-data "01" config)
+  [input-data]
+  (let [elves (->> input-data
                    split-lines
                    (f/fmap str->int)
                    (split-by nil?)

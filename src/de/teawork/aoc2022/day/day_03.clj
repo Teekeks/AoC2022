@@ -8,8 +8,8 @@
 
 
 (defn execute
-  [config]
-  (let [data (->> (get-day-data "03" config)
+  [input-data]
+  (let [data (->> input-data
                   split-lines)
         result-p1 (->> data
                        (f/fmap #(split-at (/ (count %) 2) %))
