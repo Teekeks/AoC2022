@@ -23,7 +23,7 @@ Example:
 
 I try to make these run fast enough. Here are the times on my machine:
 
-- `01`: 15ms
-- `02`: 16ms
-- `03`: 28ms
-- `04`: 19ms
+- `01`: 2ms
+- `02`: 2ms
+- `03`: 6ms
+- `04`: 4ms

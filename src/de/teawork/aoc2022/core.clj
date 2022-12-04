@@ -31,9 +31,9 @@
 
           :else
           (let [input-data (get-day-data (:day options) config)]
-            (time (condp = (:day options)
-                    "01" (d01/execute input-data)
-                    "02" (d02/execute input-data)
-                    "03" (d03/execute input-data)
-                    "04" (d04/execute input-data)
-                    (println summary)))))))
+            (condp = (:day options)
+              "01" (d01/execute input-data)
+              "02" (d02/execute input-data)
+              "03" (d03/execute input-data)
+              "04" (d04/execute input-data)
+              (println summary))))))
