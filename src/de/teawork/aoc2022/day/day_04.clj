@@ -11,10 +11,8 @@
                   (f/fmap #(split % #",|-"))
                   (f/fmap #(map str->int %)))
         result-p1 (->> data
-                       (filter #(or (and (<= (first %) (nth % 2) (second %))
-                                         (<= (first %) (nth % 3) (second %)))
-                                    (and (<= (nth % 2) (first %) (nth % 3))
-                                         (<= (nth % 2) (second %) (nth % 3)))))
+                       (filter #(or (<= (first %) (nth % 2) (nth % 3) (second %))
+                                    (<= (nth % 2) (first %) (second %) (nth % 3))))
                        count)
         result-p2 (->> data
                        (filter #(or (<= (first %) (nth % 2) (second %))
