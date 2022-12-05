@@ -27,3 +27,4 @@ I try to make these run fast enough. Here are the times on my machine:
 - `02`: 2ms
 - `03`: 6ms
 - `04`: 4ms
+- `05`: 18ms

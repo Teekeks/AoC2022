@@ -7,7 +7,8 @@
     [day-01 :as d01]
     [day-02 :as d02]
     [day-03 :as d03]
-    [day-04 :as d04]])
+    [day-04 :as d04]
+    [day-05 :as d05]])
   (:gen-class))
 
 (def cli-options
@@ -36,4 +37,5 @@
               "02" (d02/execute input-data)
               "03" (d03/execute input-data)
               "04" (d04/execute input-data)
+              "05" (d05/execute input-data)
               (println summary))))))

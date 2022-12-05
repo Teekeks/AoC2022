@@ -57,3 +57,9 @@
                 ys (second (split-with pred others))]
             (cons (concat skip)
                   (split-by pred ys))))))))
+
+(defn drop-nth [n coll]
+  (lazy-seq
+   (when-let [s (seq coll)]
+     (concat (take (dec n) (rest s))
+             (drop-nth n (drop n s))))))
