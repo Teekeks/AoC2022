@@ -24,7 +24,7 @@
          (f/fmap str->int))))
 
 (defn move-part
-  "moves a single part from 'from' to 'to' n times and returns the new state"
+  "moves up to 'mvoeable' parts at a time from 'from' to 'to' n times and returns the new state"
   [list moveable times from to]
   (let [move (if (> moveable times) times moveable)
         part (take-last move (get list from))
