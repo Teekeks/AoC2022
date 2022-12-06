@@ -16,8 +16,7 @@
 
 (defn execute
   [input-data]
-  (let [data (-> input-data)
-        result-p1 (get-unique data 4 0)
-        result-p2 (get-unique data 14 0)]
+  (let [result-p1 (get-unique input-data 4 0)
+        result-p2 (get-unique input-data 14 0)]
     (println "P1: " result-p1)
     (println "P2: " result-p2)))
