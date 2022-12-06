@@ -63,3 +63,8 @@
    (when-let [s (seq coll)]
      (concat (take (dec n) (rest s))
              (drop-nth n (drop n s))))))
+
+(defn dups [seq]
+  (for [[id freq] (frequencies seq)
+        :when (> freq 1)]
+    id))
