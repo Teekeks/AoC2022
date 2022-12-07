@@ -5,18 +5,16 @@
 
 
 (defn get-unique
-  [input length idx]
-  (let [sequence (-> (subs input idx (+ idx length))
-                     char-array
-                     seq)]
-    (if (> (count (dups sequence)) 0)
-      (recur input length (+ 1 idx))
-      (+ idx length))))
+  [input length]
+  (loop [idx 0]
+    (if (= (count (set (subs input idx (+ idx length)))) length)
+      (+ idx length)
+      (recur (+ 1 idx)))))
 
 
 (defn execute
   [input-data]
-  (let [result-p1 (get-unique input-data 4 0)
-        result-p2 (get-unique input-data 14 0)]
+  (let [result-p1 (get-unique input-data 4)
+        result-p2 (get-unique input-data 14)]
     (println "P1: " result-p1)
     (println "P2: " result-p2)))
