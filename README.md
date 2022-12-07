@@ -29,3 +29,4 @@ I try to make these run fast enough. Here are the times on my machine:
 - `04`: 4ms
 - `05`: 18ms
 - `06`: 10ms
+- `07`: 1ms
