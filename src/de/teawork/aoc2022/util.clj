@@ -1,15 +1,16 @@
 (ns de.teawork.aoc2022.util
   (:require
-    [clojure.java.io :as io]
-    [clojure.edn :as edn]
-    [clj-http.client :as http])
+   [clojure.java.io :as io]
+   [clojure.edn :as edn]
+   [clojure.string]
+   [clj-http.client :as http])
   (:gen-class))
 
 (defn str->int
  [str]
  (if (= "" str)
     nil
-    (read-string str)))
+    (read-string (clojure.string/replace str #"^0+(?!$)" ""))))
 
 
 (defn get-config
