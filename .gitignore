@@ -16,3 +16,4 @@ config.edn
 /.calva
 /.clj-kondo/.cache
 /.lsp
+*.code-workspace
