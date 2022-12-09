@@ -46,6 +46,7 @@
 
 
 (defn split-by
+  "splits a sequence into multiple sequences on the given marker, removing the marker"
   [pred coll]
   (lazy-seq
     (when-let [s (seq coll)]
@@ -59,13 +60,33 @@
             (cons (concat skip)
                   (split-by pred ys))))))))
 
-(defn drop-nth [n coll]
+(defn drop-nth 
+  "complement to take-nth"
+  [n coll]
   (lazy-seq
    (when-let [s (seq coll)]
      (concat (take (dec n) (rest s))
              (drop-nth n (drop n s))))))
 
-(defn dups [seq]
+(defn dups 
+  "get duplicates in sequence"
+  [seq]
   (for [[id freq] (frequencies seq)
         :when (> freq 1)]
     id))
+
+
+(defn add-vec
+  "adds 2 or more vectors to each other"
+  [& args]
+  (when (seq args)
+    (apply mapv + args)))
+
+
+(defn norm-1d
+  "normalizes a '1d vector' (aka single number)"
+  [x]
+  (cond
+    (> x 0) 1
+    (< x 0) -1
+    :else 0))
