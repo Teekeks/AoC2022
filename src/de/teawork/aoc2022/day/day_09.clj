@@ -54,10 +54,10 @@
 
 (defn parse-line 
   [line]
-  (->> line
-       (#(split % #" "))
-       ((fn [[dir amount]]
-          (repeat (str->int amount) dir)))))
+  (-> line
+      (split #" ")
+      ((fn [[dir amount]]
+         (repeat (str->int amount) dir)))))
 
 
 (defn execute
