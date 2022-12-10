@@ -12,11 +12,13 @@
     [day-06 :as d06]
     [day-07 :as d07]
     [day-08 :as d08]
-    [day-09 :as d09]])
+    [day-09 :as d09]
+    [day-10 :as d10]])
   (:gen-class))
 
 (def cli-options
   [["-d" "--day DAY" "Day to compute"]
+   ["-p" "--pull DAY" "only pull the data for the given day"]
    ["-h" "--help"]])
 
 (defn -main
@@ -33,6 +35,9 @@
           (do
             (println errors)
             (println summary))
+          
+          (:pull options)
+          (get-day-data (:pull options) config)
 
           :else
           (let [input-data (get-day-data (:day options) config)]
@@ -46,4 +51,5 @@
               "07" (d07/execute input-data)
               "08" (d08/execute input-data)
               "09" (d09/execute input-data)
+              "10" (d10/execute input-data)
               (println summary))))))
