@@ -33,3 +33,4 @@ I try to make these run fast enough. Here are the times on my machine:
 - `08`: 56ms
 - `09`: 44ms
 - `10`: 1ms
+- `11`: 3000ms
