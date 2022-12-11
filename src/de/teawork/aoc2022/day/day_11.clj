@@ -106,7 +106,6 @@
                   (sort >)
                   (take 2)
                   (reduce *))
-        _ (println "P1: " d-p1)
         d-p2 (->> (inspect-rounds data 10000 #(mod % magic-mod))
                   (map :activity)
                   (sort >)
