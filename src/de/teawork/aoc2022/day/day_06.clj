@@ -16,5 +16,4 @@
   [input-data]
   (let [result-p1 (get-unique input-data 4)
         result-p2 (get-unique input-data 14)]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))

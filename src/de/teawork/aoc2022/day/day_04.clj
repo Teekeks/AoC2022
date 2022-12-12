@@ -20,5 +20,4 @@
                                     (<= (nth % 2) (first %) (nth % 3))
                                     (<= (nth % 2) (second %) (nth % 3))))
                        count)]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))

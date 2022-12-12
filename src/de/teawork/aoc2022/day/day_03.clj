@@ -26,5 +26,4 @@
                                       first
                                       (#(- (int %) (if (Character/isUpperCase %) 38 96))))))
                        (reduce +))]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))

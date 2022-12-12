@@ -67,5 +67,4 @@
                   (mapcat parse-line))
         result-p1 (play-plan data 2)
         result-p2 (play-plan data 10)]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))

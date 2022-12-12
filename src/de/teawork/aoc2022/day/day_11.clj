@@ -7,8 +7,8 @@
 
 (defn parse-monkey
   [data]
-  (let [op-lookup {"*" *'
-                   "+" +'}
+  (let [op-lookup {"*" *
+                   "+" +}
         d (str/split-lines data)
         m-nr (->> (str/split (first d) #" ")
                   second
@@ -24,7 +24,8 @@
                     second
                     (str/split #" "))
         op (op-lookup (second op-data))
-        op-param [(first op-data) (last op-data)]
+        op-param (->> [(first op-data) (last op-data)]
+                      (f/fmap #(if (= % "old") % (str->int %))))
         test-div (-> (nth d 3)
                      (str/split #" ")
                      last
@@ -50,8 +51,7 @@
    item
    magic-fn]
   (let [ops (->> (:op-param monkey)
-                 (f/fmap #(str/replace % #"old" (str item)))
-                 (f/fmap read-string))
+                 (f/fmap #(if (= % "old") item %)))
         new-val (-> (apply (:op monkey) ops)
                     (magic-fn))
         target (if (divisible? (:test-div monkey) new-val)
@@ -111,5 +111,4 @@
                   (sort >)
                   (take 2)
                   (reduce *))]
-    (println "P1: " d-p1)
-    (println "P2: " d-p2)))
+    [d-p1 d-p2]))

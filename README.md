@@ -23,14 +23,16 @@ Example:
 
 I try to make these run fast enough. Here are the times on my machine:
 
-- `01`: 2ms
-- `02`: 2ms
-- `03`: 6ms
-- `04`: 4ms
-- `05`: 18ms
-- `06`: 5ms
-- `07`: 1ms
-- `08`: 56ms
-- `09`: 44ms
-- `10`: 1ms
-- `11`: 3000ms
+You can get speeds using the `--benchmark <day>` parameter.
+
+- `01`: 1.6 ms
+- `02`: 1.8 ms
+- `03`: 5.2 ms
+- `04`: 3.9 ms
+- `05`: 15.7 ms
+- `06`: 3.8 ms
+- `07`: 500 µs
+- `08`: 57.4 ms
+- `09`: 44.4 ms
+- `10`: 140 µs
+- `11`: 1.4 s

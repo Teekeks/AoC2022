@@ -73,5 +73,4 @@
                        (last (get final-state-p2 7))
                        (last (get final-state-p2 8))
                        (last (get final-state-p2 9)))]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))

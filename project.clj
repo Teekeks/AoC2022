@@ -6,6 +6,7 @@
                  [uncomplicate/fluokitten "0.9.1"]
                  [prismatic/plumbing "0.6.0"]
                  [org.clojure/tools.cli "1.0.206"]
+                 [criterium "0.4.6"]
                  [clj-http "3.12.3"]]
   :main ^:skip-aot de.teawork.aoc2022.core
   :target-path "target/%s/"

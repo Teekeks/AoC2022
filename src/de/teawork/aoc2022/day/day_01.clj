@@ -13,6 +13,6 @@
                    (split-by nil?)
                    (f/fmap #(reduce + %))
                    sort)]
-      (println (str "P1: " (last elves)))
-      (println (str "P2: " (->> (take-last 3 elves)
-                                (reduce +))))))
+    [(last elves)
+     (->> (take-last 3 elves)
+          (reduce +))]))

@@ -54,5 +54,4 @@
         result-p2 (apply max (for [x (range (count data))
                                    y (range (count (first data)))]
                                (get-view-score data [x y])))]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))

@@ -55,5 +55,4 @@
                       (reduce +))
         score-p2 (->> (f/fmap #(play-game-p2 (first %) (second %)) data)
                       (reduce +))]
-    (println "P1: " score-p1)
-    (println "P2: " score-p2)))
+    [score-p1 score-p2]))

@@ -14,13 +14,34 @@
     [day-08 :as d08]
     [day-09 :as d09]
     [day-10 :as d10]
-    [day-11 :as d11]])
+    [day-11 :as d11]]
+   [criterium.core :as crit])
   (:gen-class))
 
 (def cli-options
   [["-d" "--day DAY" "Day to compute"]
    ["-p" "--pull DAY" "only pull the data for the given day"]
+   ["-b" "--benchmark DAY" "Benchmark the solution for the given day"]
    ["-h" "--help"]])
+
+
+(defn run-day
+  [day input output]
+  (let [[p1 p2] (condp = day
+                  "01" (d01/execute input)
+                  "02" (d02/execute input)
+                  "03" (d03/execute input)
+                  "04" (d04/execute input)
+                  "05" (d05/execute input)
+                  "06" (d06/execute input)
+                  "07" (d07/execute input)
+                  "08" (d08/execute input)
+                  "09" (d09/execute input)
+                  "10" (d10/execute input)
+                  "11" (d11/execute input))]
+    (if output
+      (println (str "Part 1:\n" p1 "\n\nPart 2:\n" p2))
+      nil)))
 
 (defn -main
   [& args]
@@ -36,22 +57,18 @@
           (do
             (println errors)
             (println summary))
-          
+
           (:pull options)
           (get-day-data (:pull options) config)
 
-          :else
+          (:day options)
           (let [input-data (get-day-data (:day options) config)]
-            (condp = (:day options)
-              "01" (d01/execute input-data)
-              "02" (d02/execute input-data)
-              "03" (d03/execute input-data)
-              "04" (d04/execute input-data)
-              "05" (d05/execute input-data)
-              "06" (d06/execute input-data)
-              "07" (d07/execute input-data)
-              "08" (d08/execute input-data)
-              "09" (d09/execute input-data)
-              "10" (d10/execute input-data)
-              "11" (d11/execute input-data)
-              (println summary))))))
+            (run-day (:day options) input-data true))
+
+          (:benchmark options)
+          (let [input-data (get-day-data (:benchmark options) config)]
+            (crit/quick-bench (run-day (:benchmark options) input-data false)))
+
+          :else
+          (println summary))))
+          

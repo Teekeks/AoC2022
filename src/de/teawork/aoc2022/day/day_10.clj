@@ -47,7 +47,4 @@
         screen-line-data (->> (partition 40 cycle-states)
                               (f/fmap vec))
         screen-lines (f/fmap render-line screen-line-data)]
-    (println "P1: " result-p1)
-    (println "P2:")
-    (doseq [line screen-lines]
-      (println line))))
+    [result-p1 (str/join "\n" screen-lines)]))

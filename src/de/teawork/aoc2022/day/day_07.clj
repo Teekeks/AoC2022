@@ -31,5 +31,4 @@
                        (reduce +))
         space-to-free (- 30000000 (- 70000000 (apply max data)))
         result-p2 (apply min (filter #(< space-to-free %) data))]
-    (println "P1: " result-p1)
-    (println "P2: " result-p2)))
+    [result-p1 result-p2]))
